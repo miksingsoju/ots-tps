@@ -16,8 +16,9 @@ shape = SubResource("CapsuleShape3D_sh265")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_4flbx")
 
-[node name="Camera System" type="Node3D" parent="."]
+[node name="Camera System" type="Node3D" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("2_onrkg")
+character = NodePath("..")
 
 [node name="Camera3D" type="Camera3D" parent="Camera System"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58511394, 0.7955173, 1.4299698)

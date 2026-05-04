@@ -1,7 +1,6 @@
 extends Motion
 
 func _enter() -> void:
-	func _enter() -> void:
 	animation_state_changed.emit("Jump")
 	jump()
 	

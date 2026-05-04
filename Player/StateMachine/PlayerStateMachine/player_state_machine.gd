@@ -1,6 +1,6 @@
 extends StateMachine
 
-@export var character_model: CharacterBody
+@onready var character_model: CharacterBody3D = get_parent()
 
 func _ready() -> void:
 	for child: Motion in get_children():

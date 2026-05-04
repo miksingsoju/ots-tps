@@ -12,8 +12,10 @@ func shoot() -> void:
 	var cam: Camera3D = camera_system.camera
 	var shoot_direction: Vector3 = -cam.global_transform.basis.z
 	
+	bullet.global_position = muzzle.global_position + shoot_direction * 1.0
 	bullet.global_transform.basis = cam.global_transform.basis
-	bullet.linear_velocity = shoot_direction * bullet.speed
+	
+	bullet.fire(shoot_direction)
 
 
 func set_velocity_from_motion(vel: Vector3):

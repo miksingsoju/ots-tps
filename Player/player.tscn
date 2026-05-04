@@ -85,9 +85,5 @@ script = ExtResource("9_00tjw")
 [node name="SprintFall" type="Node" parent="StateMachine" unique_id=1937640827]
 script = ExtResource("10_x3vf3")
 
-[node name="GunAttachPoint" type="Node3D" parent="." unique_id=480851331]
-visible = false
-
-[node name="RayCast3D" type="RayCast3D" parent="GunAttachPoint" unique_id=1963625484]
-
 [node name="MuzzlePoint" type="Node3D" parent="." unique_id=394072403]
+transform = Transform3D(1, 0, 0, 0, 0.9999843, -0.0056024776, 0, 0.0056024776, 0.9999843, 0.585, 0, 0)

@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dcvkelbg1daqm" path="res://Player/StateMachine/PlayerStateMachine/States/fall.gd" id="7_x3vf3"]
 [ext_resource type="Script" uid="uid://cy121vnbj65ea" path="res://Player/StateMachine/PlayerStateMachine/States/sprint_jump.gd" id="9_00tjw"]
 [ext_resource type="Script" uid="uid://cumrx686j6wcj" path="res://Player/StateMachine/PlayerStateMachine/States/sprint_fall.gd" id="10_x3vf3"]
+[ext_resource type="PackedScene" uid="uid://dkf3koiht7kt6" path="res://Crosshair.tscn" id="14_gu6f8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -87,3 +88,8 @@ script = ExtResource("10_x3vf3")
 
 [node name="MuzzlePoint" type="Node3D" parent="." unique_id=394072403]
 transform = Transform3D(1, 0, 0, 0, 0.9999843, -0.0056024776, 0, 0.0056024776, 0.9999843, 0.585, 0, 0)
+
+[node name="Crosshair" parent="." unique_id=577683506 instance=ExtResource("14_gu6f8")]
+
+[connection signal="action_requested" from="StateMachine/AimIdle" to="StateMachine" method="_on_aim_idle_action_requested"]
+[connection signal="action_requested" from="StateMachine/AimWalk" to="StateMachine" method="_on_aim_walk_action_requested"]

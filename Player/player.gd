@@ -2,6 +2,10 @@ extends CharacterBody3D
 @export var bullet_scene: PackedScene
 @export var camera_system: Node3D
 @onready var muzzle: Node3D = $MuzzlePoint
+@onready var crosshair = $Crosshair
+
+func _ready() -> void:
+	crosshair.hide_crosshair()
 
 func shoot() -> void:
 	var bullet = bullet_scene.instantiate()

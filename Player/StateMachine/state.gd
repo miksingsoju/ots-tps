@@ -3,6 +3,7 @@ class_name State
 @warning_ignore("unused_signal")
 signal finished(next_state: String)
 signal shoot_requested()
+signal action_requested(action_name: String)
 
 func _enter() -> void:
 	return

@@ -45,3 +45,9 @@ func _change_state(state_name: String) -> void:
 
 func _on_shoot_requested() -> void:
 	owner.shoot()
+
+func _on_action_requested(action_name: String) -> void:
+	print("action called!")
+	match action_name:
+		"show_crosshair": owner.crosshair.show_crosshair()
+		"hide_crosshair": owner.crosshair.hide_crosshair()

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dkf3koiht7kt6"]
+
+[ext_resource type="Script" uid="uid://dspye1hejkgds" path="res://crosshair.gd" id="1_ngi2y"]
+
+[node name="Crosshair" type="CanvasLayer" unique_id=577683506]
+script = ExtResource("1_ngi2y")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=46049579]
+offset_left = 563.0
+offset_top = 390.0
+offset_right = 603.0
+offset_bottom = 435.0
+
+[node name="Label" type="Label" parent="CenterContainer" unique_id=1222023358]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "+"

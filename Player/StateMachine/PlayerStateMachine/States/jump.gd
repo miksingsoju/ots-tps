@@ -1,7 +1,8 @@
 extends Motion
 
 func _enter() -> void:
-	print(name)
+	func _enter() -> void:
+	animation_state_changed.emit("Jump")
 	jump()
 	
 func _update(delta: float) -> void:

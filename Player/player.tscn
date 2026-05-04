@@ -91,5 +91,8 @@ transform = Transform3D(1, 0, 0, 0, 0.9999843, -0.0056024776, 0, 0.0056024776, 0
 
 [node name="Crosshair" parent="." unique_id=577683506 instance=ExtResource("14_gu6f8")]
 
+[node name="CharacterBody" parent="." instance=ExtResource("14_gu6f8")]
+transform = Transform3D(-0.1, 0, -8.742278e-09, 0, 0.1, 0, 8.742278e-09, 0, -0.1, 0.09303522, 9.190713, 0.023608446)
+
 [connection signal="action_requested" from="StateMachine/AimIdle" to="StateMachine" method="_on_aim_idle_action_requested"]
 [connection signal="action_requested" from="StateMachine/AimWalk" to="StateMachine" method="_on_aim_walk_action_requested"]

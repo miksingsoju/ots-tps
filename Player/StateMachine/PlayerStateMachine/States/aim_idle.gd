@@ -1,7 +1,7 @@
 extends Motion
 
 func _enter() -> void:
-	print(name)
+	animation_state_changed.emit("AimIdle")
 	action_requested.emit("show_crosshair")	
 
 func _exit() -> void:

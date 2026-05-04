@@ -14,7 +14,7 @@ func _input(event: InputEvent) -> void:
 	current_state._state_input(event)
 	
 func _physics_process(delta: float) -> void:
-	current_state.update(delta)
+	current_state._update(delta)
 
 func _create_state_map() -> void:
 	for child: State in get_children():
@@ -38,4 +38,4 @@ func _change_state(state_name: String) -> void:
 		
 	current_state._exit()
 	current_state = state_map[state_name]
-	
+	current_state._enter()

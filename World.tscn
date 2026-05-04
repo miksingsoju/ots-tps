@@ -37,8 +37,9 @@ material = SubResource("StandardMaterial3D_eu7l1")
 
 [node name="Player" parent="." unique_id=136574597 instance=ExtResource("3_bcbcq")]
 
-[node name="StateMachine" type="Node" parent="." unique_id=1789495265]
+[node name="StateMachine" type="Node" parent="." unique_id=1789495265 node_paths=PackedStringArray("start_state")]
 script = ExtResource("4_bah7m")
+start_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=687778811]
 script = ExtResource("5_fv4w7")

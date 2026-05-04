@@ -5,6 +5,8 @@ const SPEED = 5.0
 const SPRINT = 2.0
 const JUMP_VELOCITY = 4.5
 
+func set_velocity_from_motion(vel: Vector3):
+	velocity = vel
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

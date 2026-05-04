@@ -14,7 +14,8 @@ static var direction: Vector3 = Vector3.ZERO
 static var velocity: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
-	velocity_updated.connect(owner.set_velocity_from_motion)
+	pass
+	#velocity_updated.connect(owner.set_velocity_from_motion)
 
 func set_direction() -> void:
 	input_dir = Input.get_vector("left", "right", "up", "down")

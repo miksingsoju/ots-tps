@@ -9,8 +9,8 @@ func shoot() -> void:
 	
 	bullet.global_position = muzzle.global_position
 	
-	var cam: Camera3D = camera_system
-	var shoot_direction: Vector3 = -cam.global_transformation.basis.z
+	var cam: Camera3D = camera_system.camera
+	var shoot_direction: Vector3 = -cam.global_transform.basis.z
 	
 	bullet.global_transform.basis = cam.global_transform.basis
 	bullet.linear_velocity = shoot_direction * bullet.speed
@@ -18,7 +18,7 @@ func shoot() -> void:
 
 func set_velocity_from_motion(vel: Vector3):
 	velocity = vel
+	move_and_slide()
 
 func _physics_process(delta: float) -> void:
-
-	move_and_slide()
+	pass

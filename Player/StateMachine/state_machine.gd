@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 func _create_state_map() -> void:
 	for child: State in get_children():
 		child.finished.connect(_change_state)
+		child.shoot_requested.connect(_on_shoot_requested)
 		state_map[child.name] = child
 
 func _initialize(state: State) -> void:
@@ -41,3 +42,6 @@ func _change_state(state_name: String) -> void:
 	current_state._exit()
 	current_state = state_map[state_name]
 	current_state._enter()
+
+func _on_shoot_requested() -> void:
+	owner.shoot()

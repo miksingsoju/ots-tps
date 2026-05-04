@@ -9,3 +9,6 @@ func _update(delta: float) -> void:
 
 	if direction != Vector3.ZERO:
 		finished.emit("Run")
+
+	if not is_on_floor():
+		finished.emit("Fall")

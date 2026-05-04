@@ -6,7 +6,7 @@ signal velocity_updated(vel: Vector3)
 const SPEED = 5.0
 const SPRINT = 2.0
 const JUMP_VELOCITY = 4.5
-const GRAVITY: float = 9.8
+const GRAVITY: float = -9.8
 const ACCELERATION: float = 1000
 
 static var input_dir: Vector2 = Vector2.ZERO
@@ -29,3 +29,5 @@ func calculate_gravity(delta: float):
 	if not owner.is_on_floor():
 		velocity.y += GRAVITY * delta
 	
+func is_on_floor() -> bool:
+	return owner.is_on_floor()

@@ -8,6 +8,8 @@ var current_state: State = null
 var _active: bool = false
 
 func _ready() -> void:
+	_active = true
+	_create_state_map()
 	_initialize(start_state)
 
 func _input(event: InputEvent) -> void:

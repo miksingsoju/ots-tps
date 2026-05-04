@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dlx4dvaleura6"]
+
+[ext_resource type="Script" uid="uid://tims2ec4cd3x" path="res://target_dummy.gd" id="1_4dki3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v51to"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4dki3"]
+
+[node name="TargetDummy" type="StaticBody3D" unique_id=1190246139]
+script = ExtResource("1_4dki3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=936613932]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1335494157]
+shape = SubResource("BoxShape3D_v51to")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=525703889]
+mesh = SubResource("BoxMesh_4dki3")

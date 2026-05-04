@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://coevx1u5nf2m5" path="res://Assets/PNG/Green/texture_08.png" id="1_2dftf"]
 [ext_resource type="Texture2D" uid="uid://bww0t4itpsse2" path="res://Assets/PNG/Purple/texture_01.png" id="2_bcbcq"]
 [ext_resource type="PackedScene" uid="uid://d20hb8mnnooso" path="res://Player/player.tscn" id="3_bcbcq"]
+[ext_resource type="PackedScene" uid="uid://dlx4dvaleura6" path="res://target_dummy.tscn" id="4_js7pq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_js7pq"]
 albedo_texture = ExtResource("1_2dftf")
@@ -31,3 +32,18 @@ size = Vector3(29, 9.262632, 29)
 material = SubResource("StandardMaterial3D_eu7l1")
 
 [node name="Player" parent="." unique_id=136574597 instance=ExtResource("3_bcbcq")]
+
+[node name="TargetDummy" parent="." unique_id=1190246139 instance=ExtResource("4_js7pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4804363, -0.7854521, 10.092524)
+
+[node name="TargetDummy2" parent="." unique_id=568534862 instance=ExtResource("4_js7pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.153572, -0.8749559, -8.589413)
+
+[node name="TargetDummy3" parent="." unique_id=1893607283 instance=ExtResource("4_js7pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.044256, -0.9621084, -9.6706505)
+
+[node name="TargetDummy4" parent="." unique_id=54587606 instance=ExtResource("4_js7pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.157899, -0.9621084, 3.2278013)
+
+[node name="TargetDummy5" parent="." unique_id=1349583790 instance=ExtResource("4_js7pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4227324, -0.9621084, 6.1087527)

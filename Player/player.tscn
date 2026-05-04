@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://wrrpfr8jpi86" path="res://Player/player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://blsqy586fg0tw" path="res://Player/camera_system.gd" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://cd3ke4gcuie40" path="res://Player/StateMachine/PlayerStateMachine/player_state_machine.gd" id="3_btcbx"]
+[ext_resource type="Script" uid="uid://dciltjot8to10" path="res://Player/StateMachine/PlayerStateMachine/States/idle.gd" id="4_vtle1"]
+[ext_resource type="Script" uid="uid://cgmdi7uypn6gs" path="res://Player/StateMachine/PlayerStateMachine/States/run.gd" id="5_od3ui"]
+[ext_resource type="Script" uid="uid://vt1ju12k1o44" path="res://Player/StateMachine/PlayerStateMachine/States/jump.gd" id="6_00tjw"]
+[ext_resource type="Script" uid="uid://dcvkelbg1daqm" path="res://Player/StateMachine/PlayerStateMachine/States/fall.gd" id="7_x3vf3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -11,16 +16,16 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_i3pqv"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=354787937]
 script = ExtResource("1_4flbx")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2051840653]
 shape = SubResource("CapsuleShape3D_sh265")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1704434334]
 mesh = SubResource("CapsuleMesh_4flbx")
 
-[node name="Camera System" type="Node3D" parent="." node_paths=PackedStringArray("character", "edge_spring_arm", "rear_spring_arm", "camera")]
+[node name="Camera System" type="Node3D" parent="." unique_id=726314370 node_paths=PackedStringArray("character", "edge_spring_arm", "rear_spring_arm", "camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76003253, 0)
 script = ExtResource("2_onrkg")
 character = NodePath("..")
@@ -28,15 +33,31 @@ edge_spring_arm = NodePath("Edge Spring Arm")
 rear_spring_arm = NodePath("Edge Spring Arm/Rear Spring Arm")
 camera = NodePath("Edge Spring Arm/Rear Spring Arm/Camera3D")
 
-[node name="Edge Spring Arm" type="SpringArm3D" parent="Camera System"]
+[node name="Edge Spring Arm" type="SpringArm3D" parent="Camera System" unique_id=243357994]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.13953006, 0)
 shape = SubResource("SphereShape3D_onrkg")
 spring_length = 0.5
 
-[node name="Rear Spring Arm" type="SpringArm3D" parent="Camera System/Edge Spring Arm"]
+[node name="Rear Spring Arm" type="SpringArm3D" parent="Camera System/Edge Spring Arm" unique_id=779241803]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 shape = SubResource("SphereShape3D_i3pqv")
 spring_length = 1.5
 
-[node name="Camera3D" type="Camera3D" parent="Camera System/Edge Spring Arm/Rear Spring Arm"]
+[node name="Camera3D" type="Camera3D" parent="Camera System/Edge Spring Arm/Rear Spring Arm" unique_id=306639497]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58511394, 0.7955173, 1.4299698)
+
+[node name="StateMachine" type="Node" parent="." unique_id=910121506 node_paths=PackedStringArray("start_state")]
+script = ExtResource("3_btcbx")
+start_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1994326202]
+script = ExtResource("4_vtle1")
+
+[node name="Run" type="Node" parent="StateMachine" unique_id=506274456]
+script = ExtResource("5_od3ui")
+
+[node name="Jump" type="Node" parent="StateMachine" unique_id=802715043]
+script = ExtResource("6_00tjw")
+
+[node name="Fall" type="Node" parent="StateMachine" unique_id=2096386622]
+script = ExtResource("7_x3vf3")
